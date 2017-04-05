@@ -1,0 +1,4 @@
+[plugin]
+description = "Dokku plugin to add new relic plugins"
+version = "0.0.1"
+[plugin.config]

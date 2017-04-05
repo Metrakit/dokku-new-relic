@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
+source "$PLUGIN_CORE_AVAILABLE_PATH/common/functions"
+
+APP="$1";
+
+dokku_log_info1 "Installing ruby..."
+apt-get install build-essential libpq-dev ruby ruby-dev -y
+
+dokku_log_info1 "Installing gems...."
+gem install newrelic_plugin daemon bundler json_pure pg
